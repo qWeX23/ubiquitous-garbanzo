@@ -1,8 +1,4 @@
 <template>
-  <!-- <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div> -->
   <div class="iteration">
     <!-- <h1>What iteration is it?  This one dumbass {{thing}}</h1> -->
     <h1>
@@ -30,15 +26,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { Vue } from "vue-property-decorator";
 
-// @Component({
-//   components: {
-//     HelloWorld
-//   }
-// })
-export default class Home extends Vue {
-  private thing: number = (Math.floor(Math.random() * 200) + 1);
+export default class Iteration extends Vue {
+    private thing: number = (Math.floor(Math.random() * 200) + 1);
 }
 </script>
+
+<p>
+  <span style='color: blue'>G</span>
+  <span style='color: red'>o</span>
+  <span style='color: yellow'>o</span>
+  <span style='color: blue'>g</span>
+  <span style='color: green'>l</span>
+  <span style='color: red'>e</span>
+</p>
