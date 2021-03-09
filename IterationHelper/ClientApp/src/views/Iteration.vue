@@ -1,10 +1,6 @@
 <template>
-  <!-- <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div> -->
   <div class="iteration">
-    <!-- <h1>What iteration is it?  This one dumbass {{thing}}</h1> -->
+    <!-- <div v-if="isLoaded"> -->
     <h1>
         <span style="color: blue">W</span>
         <span style="color: red">h</span>
@@ -24,21 +20,27 @@
         <span style="color: red"> I</span>
         <span style="color: black">t</span>
         <span style="color: blue">?</span>
-        {{thing}}
+        {{iterationNumber}}
     </h1>
+  <!-- </div> -->
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+<script lang='ts'>
+import { Options, Vue } from 'vue-class-component';
+import IterationService from '../services/IterationService';
+import { ref, defineComponent, computed } from 'vue';
 
-// @Component({
-//   components: {
-//     HelloWorld
-//   }
-// })
-export default class Home extends Vue {
-  private thing: number = (Math.floor(Math.random() * 200) + 1);
+export default class Iteration extends Vue {
+  iterationNumber = 0;
+    created() {
+      this.getIteration();
+      console.log('Iteration Number ', this.iterationNumber);
+    }
+    getIteration(): void {
+        IterationService.getIterationNumber().then(result => {
+          this.iterationNumber = result;
+        })
+    }
 }
 </script>
