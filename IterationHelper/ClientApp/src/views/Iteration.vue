@@ -27,12 +27,13 @@
 </template>
 
 <script lang='ts'>
-import { Options, Vue } from 'vue-class-component';
+import { Component, Vue } from 'vue-property-decorator';
 import IterationService from '../services/IterationService';
-import { ref, defineComponent, computed } from 'vue';
 
+@Component
 export default class Iteration extends Vue {
   iterationNumber = 0;
+
     created() {
       this.getIteration();
       console.log('Iteration Number ', this.iterationNumber);
