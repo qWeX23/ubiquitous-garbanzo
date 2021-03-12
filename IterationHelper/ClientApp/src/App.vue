@@ -2,10 +2,10 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="blue-grey darken-2"
       dark
     >
-      <div class="d-flex align-center">
+      <!-- <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -34,28 +34,21 @@
       >
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      </v-btn> -->
+      <v-toolbar-title>Iteration Helper</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <v-container fluid>
+      <router-view />
+    </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
-
 export default Vue.extend({
   name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
 });
 </script>
