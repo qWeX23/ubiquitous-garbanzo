@@ -23,7 +23,7 @@ const routes: Array<RouteConfig> = [
     path: '/iteration',
     name: 'Iteration',
     component: () => 
-      import(/* webpackChunkName: "about" */ "../views/Iteration.vue")
+      import(/* webpackChunkName: "about" */ "../components/Iteration.vue")
   }
 ];
 
