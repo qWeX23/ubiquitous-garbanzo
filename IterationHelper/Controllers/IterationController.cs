@@ -5,7 +5,7 @@ namespace IterationHelper.Controllers
 {
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class IterationController : ControllerBase
     {
         public IterationController()
